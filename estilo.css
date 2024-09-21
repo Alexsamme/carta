@@ -1,0 +1,157 @@
+/* reset css */
+* {
+  min-width: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: 'Georgia', serif; /* Mantengo la fuente Georgia */
+  background: linear-gradient(135deg, #ffcccb, #ffe4e1); /* Fondo degradado en colores rosados */
+  color: #333; /* Color del texto */
+  font-size: 14px; /* Tamaño de letra más pequeño en todo el cuerpo */
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Estilos */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container-letter {
+  position: relative;
+}
+
+.cover {
+  position: absolute;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 100px solid #fe3334; /* Rojo intenso */
+  border-bottom: 100px solid transparent;
+  transition: transform .75s;
+  transform-origin: top;
+}
+
+.paper {
+  position: absolute;
+  padding: 1.5rem;
+  line-height: 1.5rem; /* Reduzco la altura de línea */
+  right: 5px;
+  z-index: -1;
+  background: white;
+  width: 390px;
+  height: 180px;
+  transition: all .75s;
+  font-family: 'Courier New', monospace; /* Fuente para la carta */
+  font-size: 0.9rem; /* Tamaño de letra más pequeño para el texto de la carta */
+  color: #555; /* Color de texto para la carta */
+}
+
+.letter {
+  border-left: 200px solid #ff989e;
+  border-right: 200px solid #ff989e;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid #ff858a;
+}
+
+.options {
+  display: flex;
+  gap: 5rem;
+}
+
+.options button {
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  background: #fe3334; /* Rojo intenso */
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.85rem; /* Tamaño de letra más pequeño para los botones */
+}
+
+.options button:hover {
+  background: #ff989e; /* Color de hover más claro */
+}
+
+.open-cover {
+  transform: rotatex(180deg);
+}
+
+.open-paper {
+  animation: openPaper .5s forwards;
+}
+
+@keyframes openPaper {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -120px;
+  }
+}
+
+.close-paper {
+  animation: closePaper .5s forwards;
+}
+
+@keyframes closePaper {
+  0% {
+    top: -120px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.heart {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 46.5%;
+  margin: auto;
+  font-size: 2.5rem; /* Tamaño de letra más pequeño para el corazón */
+  color: #fe3334; /* Color del corazón */
+  animation: crecer 1s forwards;
+}
+
+@keyframes crecer {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 3;
+    opacity: 0;
+  }
+}
